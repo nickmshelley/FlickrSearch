@@ -102,10 +102,10 @@
 				32398454225F8E120033EDA8 /* AppDelegate.swift */,
 				32398456225F8E120033EDA8 /* SearchViewController.swift */,
 				32398482225FA2AB0033EDA8 /* SearchInteractor.swift */,
+				32398484225FA31F0033EDA8 /* FlickrImage.swift */,
 				3239845B225F8E130033EDA8 /* Assets.xcassets */,
 				3239845D225F8E130033EDA8 /* LaunchScreen.storyboard */,
 				32398460225F8E130033EDA8 /* Info.plist */,
-				32398484225FA31F0033EDA8 /* FlickrImage.swift */,
 			);
 			path = FlickrSearch;
 			sourceTree = "<group>";
