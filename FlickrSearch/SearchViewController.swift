@@ -31,6 +31,8 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print(searchBar.text)
+        SearchInteractor.search(text: searchBar.text ?? "") { images in
+            
+        }
     }
 }
