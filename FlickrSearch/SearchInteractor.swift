@@ -1,6 +1,14 @@
 
 import Foundation
 
+private struct TopLevelResponse: Codable {
+    let photos: NextLevelResponse
+}
+
+private struct NextLevelResponse: Codable {
+    let photo: [FlickrImage]
+}
+
 class SearchInteractor {
     static func search(text: String, page: Int = 1, completion: @escaping ([FlickrImage]) -> Void) {
         guard !text.isEmpty else { return completion([]) }
@@ -19,9 +27,10 @@ class SearchInteractor {
         let task = URLSession.shared.dataTask(with: components.url!) { data, response, error in
             guard let data = data else { return completion([]) }
             
-            let json = try! JSONSerialization.jsonObject(with: data, options: [])
-            print(json)
+            let response = try! JSONDecoder().decode(TopLevelResponse.self, from: data)
+            completion(response.photos.photo)
         }
+        
         task.resume()
     }
 }
