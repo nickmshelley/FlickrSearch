@@ -36,14 +36,26 @@ class SearchViewController: UIViewController {
     }
 }
 
-extension SearchViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        SearchInteractor.search(text: searchBar.text ?? "") { images in
+extension SearchViewController {
+    func loadImages(text: String, isInitialSearch: Bool) {
+        if isInitialSearch {
+            images = []
+        }
+        
+        let page = (images.count / 25) + 1
+        
+        SearchInteractor.search(text: text, page: page) { images in
             DispatchQueue.main.async { [weak self] in
-                self?.images = images
+                self?.images.append(contentsOf: images)
                 self?.tableView.reloadData()
             }
         }
+    }
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        loadImages(text: searchBar.text ?? "", isInitialSearch: true)
     }
 }
 
@@ -61,6 +73,10 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ImageCell
         
         cell.configure(url: image.imageURL(isThumbnail: true), title: image.title)
+        
+        if indexPath.row == images.count - 1 {
+            loadImages(text: searchBar.text ?? "", isInitialSearch: false)
+        }
         
         return cell
     }
