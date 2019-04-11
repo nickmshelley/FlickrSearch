@@ -17,6 +17,7 @@
 		32398485225FA31F0033EDA8 /* FlickrImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32398484225FA31F0033EDA8 /* FlickrImage.swift */; };
 		32398488225FDA560033EDA8 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32398487225FDA560033EDA8 /* SDWebImage.framework */; };
 		3239848B225FDD790033EDA8 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3239848A225FDD790033EDA8 /* ImageCell.swift */; };
+		3257B7E9225FE3AB00538534 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3257B7E8225FE3AB00538534 /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		32398484225FA31F0033EDA8 /* FlickrImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrImage.swift; sourceTree = "<group>"; };
 		32398487225FDA560033EDA8 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		3239848A225FDD790033EDA8 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		3257B7E8225FE3AB00538534 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				32398482225FA2AB0033EDA8 /* SearchInteractor.swift */,
 				32398484225FA31F0033EDA8 /* FlickrImage.swift */,
 				3239848A225FDD790033EDA8 /* ImageCell.swift */,
+				3257B7E8225FE3AB00538534 /* ImageViewController.swift */,
 				3239845B225F8E130033EDA8 /* Assets.xcassets */,
 				3239845D225F8E130033EDA8 /* LaunchScreen.storyboard */,
 				32398460225F8E130033EDA8 /* Info.plist */,
@@ -300,6 +303,7 @@
 				32398485225FA31F0033EDA8 /* FlickrImage.swift in Sources */,
 				32398455225F8E120033EDA8 /* AppDelegate.swift in Sources */,
 				3239848B225FDD790033EDA8 /* ImageCell.swift in Sources */,
+				3257B7E9225FE3AB00538534 /* ImageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

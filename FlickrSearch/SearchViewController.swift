@@ -64,4 +64,10 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = ImageViewController(url: images[indexPath.row].imageURL())
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
