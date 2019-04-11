@@ -15,6 +15,8 @@
 		32398475225F8E130033EDA8 /* FlickrSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32398474225F8E130033EDA8 /* FlickrSearchUITests.swift */; };
 		32398483225FA2AB0033EDA8 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32398482225FA2AB0033EDA8 /* SearchInteractor.swift */; };
 		32398485225FA31F0033EDA8 /* FlickrImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32398484225FA31F0033EDA8 /* FlickrImage.swift */; };
+		32398488225FDA560033EDA8 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32398487225FDA560033EDA8 /* SDWebImage.framework */; };
+		3239848B225FDD790033EDA8 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3239848A225FDD790033EDA8 /* ImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		32398476225F8E130033EDA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32398482225FA2AB0033EDA8 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		32398484225FA31F0033EDA8 /* FlickrImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrImage.swift; sourceTree = "<group>"; };
+		32398487225FDA560033EDA8 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		3239848A225FDD790033EDA8 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32398488225FDA560033EDA8 /* SDWebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +88,7 @@
 				32398468225F8E130033EDA8 /* FlickrSearchTests */,
 				32398473225F8E130033EDA8 /* FlickrSearchUITests */,
 				32398452225F8E120033EDA8 /* Products */,
+				32398486225FDA560033EDA8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +109,7 @@
 				32398456225F8E120033EDA8 /* SearchViewController.swift */,
 				32398482225FA2AB0033EDA8 /* SearchInteractor.swift */,
 				32398484225FA31F0033EDA8 /* FlickrImage.swift */,
+				3239848A225FDD790033EDA8 /* ImageCell.swift */,
 				3239845B225F8E130033EDA8 /* Assets.xcassets */,
 				3239845D225F8E130033EDA8 /* LaunchScreen.storyboard */,
 				32398460225F8E130033EDA8 /* Info.plist */,
@@ -128,6 +135,14 @@
 			path = FlickrSearchUITests;
 			sourceTree = "<group>";
 		};
+		32398486225FDA560033EDA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32398487225FDA560033EDA8 /* SDWebImage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +153,7 @@
 				3239844D225F8E120033EDA8 /* Sources */,
 				3239844E225F8E120033EDA8 /* Frameworks */,
 				3239844F225F8E120033EDA8 /* Resources */,
+				32398489225FDA680033EDA8 /* CartTool */,
 			);
 			buildRules = (
 			);
@@ -253,6 +269,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		32398489225FDA680033EDA8 /* CartTool */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = CartTool;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./carttool copy-frameworks\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3239844D225F8E120033EDA8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -262,6 +299,7 @@
 				32398457225F8E120033EDA8 /* SearchViewController.swift in Sources */,
 				32398485225FA31F0033EDA8 /* FlickrImage.swift in Sources */,
 				32398455225F8E120033EDA8 /* AppDelegate.swift in Sources */,
+				3239848B225FDD790033EDA8 /* ImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +467,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FlickrSearch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -446,6 +488,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FlickrSearch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
